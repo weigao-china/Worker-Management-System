@@ -1,0 +1,29 @@
+# CMake build
+cmake-build-*/
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+
+# CLion
+.idea/
+
+# macOS
+.DS_Store
+
+# Executables
+*.exe
+*.out
+
+# Compiled objects
+*.o
+*.obj
+
+# Libraries
+*.a
+*.lib
+*.so
+*.dll
