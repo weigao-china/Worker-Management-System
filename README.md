@@ -1,7 +1,67 @@
-## Worker-Management-System
+Worker Management System
 
-一个基于C++与cfstream的职工管理系统，可以帮助你学会在实际开发中使用 [cfstream](https://github.com/weigao-china/cfstream) 。
+A simple Worker Management System built with C++ as a demonstration project for cfstream.
 
-## 相关说明
+This project is designed as a practical example of using the cfstream library. It demonstrates how cfstream can simplify file input/output operations while implementing a basic object-oriented console application.
 
-本项目有参考现存资料，侵权联系删 QaQ
+Note
+
+This project is intended for learning and demonstration purposes. It is not a production-ready employee management system.
+
+Features
+
+* Demonstrates the usage of cfstream
+* Object-oriented design
+* Inheritance and runtime polymorphism
+* File persistence
+* Cross-platform support (Windows, macOS and Linux)
+* Built with CMake
+
+About cfstream
+
+This project uses cfstream, a lightweight C++ file stream library designed to simplify common file operations.
+
+If you are interested in the library itself, please visit the main repository:
+
+➡️ https://github.com/weigao-china/cfstream
+
+Project Structure
+
+Worker-Management-System
+├── include/
+├── src/
+├── CMakeLists.txt
+├── LICENSE
+└── README.md
+
+Build
+
+git clone https://github.com/weigao-china/Worker-Management-System.git
+cd Worker-Management-System
+cmake -S . -B build
+cmake --build build
+
+Run:
+
+macOS / Linux
+
+./build/WorkerManagementSystem
+
+Windows
+
+.\build\Debug\WorkerManagementSystem.exe
+
+Learning Objectives
+
+This example demonstrates:
+
+* Basic C++ class design
+* Inheritance
+* Virtual functions
+* Runtime polymorphism
+* File management with cfstream
+* Modern CMake project organization
+
+License
+
+This project is licensed under the MIT License.
