@@ -8,6 +8,8 @@
 
 ## ✨ Overview
 
+[中文README](README_CN.md)
+
 This project is the official example project for **cfstream**, implemented in modern C++.
 
 It demonstrates how to use **cfstream** in a practical console application while showcasing object-oriented programming, runtime polymorphism, file persistence, and modern CMake project organization.
