@@ -48,6 +48,7 @@ Worker-Management-System
 ├── src/
 ├── CMakeLists.txt
 ├── LICENSE
+├── README_CN.md
 └── README.md
 ```
 
