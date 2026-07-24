@@ -4,6 +4,8 @@
 >
 > This repository demonstrates how to build a simple object-oriented application using the **cfstream** library.
 
+**Current version of cfstream in use: V1.4.0**
+
 ---
 
 ## 📒 Overview
