@@ -3,8 +3,8 @@
  * @file cfs.hpp
  * @language C++
  * @author weigao (https://github.com/weigao-china)
- * @version 1.3.0
- * @date 2026-06-19
+ * @version 1.4.0
+ * @date 2026-7-24
  *
  * @copyright 2026 weigao
  * @license MIT
@@ -32,6 +32,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 
+#pragma once
+
 #ifndef CFS_H_CPP
 #define CFS_H_CPP
 
@@ -58,9 +60,9 @@ namespace cfs {
     static std::ofstream cout;
 
 #if __cplusplus >= 201103L
-    static constexpr const char* versionnumber = "1.3.0";
+    static constexpr const char* versionnumber = "1.4.0";
 #else
-    static const char* versionnumber = "1.3.0";
+    static const char* versionnumber = "1.4.0";
 #endif
 
     static inline const char* getversion() {
@@ -69,30 +71,57 @@ namespace cfs {
 
     static inline void cfs(const char* input, const char* output) {
         if (input != CFS_NULLPTR) {
-            std::freopen(input, "r", stdin);
+            std::fflush(stdin);
+            if (std::freopen(input, "r", stdin) == CFS_NULLPTR) {
+                std::cerr << "Error-from-cfs Failed to open input file: " << input << std::endl;
+            }
         }
         if (output != CFS_NULLPTR) {
-            std::freopen(output, "w", stdout);
+            std::fflush(stdout);
+            if (std::freopen(output, "w", stdout) == CFS_NULLPTR) {
+                std::cerr << "Error-from-cfs Failed to open output file: " << output << std::endl;
+            }
         }
     }
 
     static inline void cppfs(const char* input, const char* output) {
-        if(cin.is_open()||cout.is_open()) {
-            std::cerr << "Error-from-cfs Already open cppfs,please close first!" << std::endl;
+        if (cin.is_open() || cout.is_open()) {
+            std::cerr << "Error-from-cfs Already open cppfs, please close first!" << std::endl;
             return;
         }
-        if(input!=nullptr) cin.open(input);
-        if(output!=nullptr) cout.open(output);
+
+        if (input != CFS_NULLPTR) {
+            cin.open(input);
+            if (!cin.is_open()) {
+                std::cerr << "Error-from-cfs Failed to open input file: " << input << std::endl;
+            }
+        }
+
+        if (output != CFS_NULLPTR) {
+            cout.open(output);
+            if (!cout.is_open()) {
+                std::cerr << "Error-from-cfs Failed to open output file: " << output << std::endl;
+            }
+        }
     }
 
     static inline void closecfs() {
-        std::freopen(CFS_STDIN_DEVICE, "r", stdin);
-        std::freopen(CFS_STDOUT_DEVICE, "w", stdout);
+        std::fflush(stdin);
+        std::fflush(stdout);
+
+        if (std::freopen(CFS_STDIN_DEVICE, "r", stdin) == CFS_NULLPTR) {
+            std::cerr << "Error-from-cfs Failed to restore stdin" << std::endl;
+        }
+        if (std::freopen(CFS_STDOUT_DEVICE, "w", stdout) == CFS_NULLPTR) {
+            std::cerr << "Error-from-cfs Failed to restore stdout" << std::endl;
+        }
     }
 
     static inline void closecppfs(){
         if (cin.is_open()) cin.close();
         if (cout.is_open()) cout.close();
+        cin.clear();
+        cout.clear();
     }
 }
 
