@@ -6,7 +6,7 @@
 
 ---
 
-## ✨ 项目简介
+## 📒  项目简介
 
 [English README](README.md)
 
