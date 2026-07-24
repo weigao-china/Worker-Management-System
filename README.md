@@ -6,7 +6,7 @@
 
 ---
 
-## ✨ Overview
+## 📒 Overview
 
 [中文README](README_CN.md)
 
@@ -131,7 +131,13 @@ If you find a bug or have a suggestion, feel free to:
 - Submit a Pull Request
 
 ---
+## 🙏 Acknowledgements
 
+This project was developed with reference to some publicly available courses and learning materials provided by [itheima](http://www.itheima.com/).
+
+It is intended solely for learning, communication, and open-source demonstration purposes. If you believe that any content in this repository infringes upon your legitimate rights or interests, please feel free to contact me. I will promptly review the issue and make appropriate modifications or remove the relevant content if necessary.
+
+---
 ## 📄 License
 
 This project is licensed under the **MIT License**.
